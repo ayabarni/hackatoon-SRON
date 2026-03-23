@@ -36,3 +36,13 @@ Retro of futuristische terminal waar regels code of grafieken snel voorbij komen
 
 ### Easter egg ideas
 Ergens bij ‘observatie’ een klikbaar sterretje -> bij klikken wordt de satelliet in het zwarte gat gezogen…
+
+
+
+
+
+
+hero section
+rocket section 
+sattelite section 
+de content 
