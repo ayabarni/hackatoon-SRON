@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const video = document.querySelector("video");
     const scrollContainer = document.querySelector(".scroll-container");
     const textElements = document.querySelectorAll(".typewriter");
+    const skipBtn = document.getElementById("skip-btn");
 
     // Video afspelen
     video.play();
@@ -77,4 +78,13 @@ document.addEventListener("DOMContentLoaded", () => {
             }, 2000);
         }
     });
+
+    if (skipBtn) {
+        skipBtn.addEventListener("click", () => {
+            scrollContainer.scrollTo({
+                top: scrollContainer.scrollHeight,
+                behavior: "smooth"
+            });
+        });
+    }
 });
