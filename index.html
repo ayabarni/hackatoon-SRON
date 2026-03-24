@@ -1,27 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/style.css">
-    <script src="script/script.js" defer></script>
+    <link rel="stylesheet" href="./styles/index.css">
+    <script src="script/index.js" defer></script>
     <title>Nebula Xplorer</title>
     <!-- Source: https://modelviewer.dev/ -->
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
+
 <body>
     <header></header>
-    <main>
-            
-        <section class="mila-video-bh">
+    <main class="stacked-layout">
 
+        <section class="mila-video-bh">
             <video muted preload="auto">
                 <source src="./videos/video-blackhole.mp4" type="video/mp4">
             </video>
-
         </section>
+
+        <div class="jeppe-scroll">
+            <div class="scroll-container">
+                <section class="spacer">
+                    <h1>THE NEBULA XPLORER</h1>
+                </section>
+                <section class="snap-section">
+                    <div class="text-container">
+                        <p class="typewriter"
+                            data-text="SRON develops and co-builds groundbreaking space missions for scientific research. With the NEBULA XPLORER, we set our sights on the most extreme gravitational fields in the universe. Starting in 2030, this satellite will study how supermassive black holes awaken and devour matter. A fundamental quest into the dynamics of the cosmos, to make the invisible visible.">
+                        </p>
+                    </div>
+                </section>
+                <section class="snap-section">
+                    <div class="text-container">
+                        <p class="typewriter"
+                            data-text="Parallel to its scientific objectives, the NEBULA XPLORER is an ambitious educational mission. From conceptualization to final realization, this entire project is designed and executed by students. It is a statement of capability, empowering the next generation of engineers and designers to redefine space technology and academic collaboration.">
+                        </p>
+                    </div>
+                </section>
+                <section class="spacer">
+                    <a href="info.html" class="next-page-btn">
+                        <p></p>
+                    </a>
+                </section>
+            </div>
+        </div>
 
     </main>
     <footer></footer>
 </body>
+
 </html>

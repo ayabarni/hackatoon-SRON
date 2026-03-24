@@ -1,0 +1,19 @@
+h1 {
+    color: white;
+    text-align: center;
+    margin-top: 12em;
+}
+
+body {
+    animation: fadeInPage 2s ease-in-out;
+}
+
+@keyframes fadeInPage {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

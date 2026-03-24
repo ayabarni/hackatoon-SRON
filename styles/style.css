@@ -7,22 +7,12 @@
 
 :root {
   --color-bg-darkblue: #1A1A39;
+  --bg-dark: #050505;
+  --text-light: #e0e0e0;
+  --accent: #ffffff;
 }
 
 body {
   overflow-x: hidden;
   background-color: var(--color-bg-darkblue);
-}
-
-.mila-video-bh video {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-}
-
-.mila-video-bh {
-  height: 400vh;
 }
