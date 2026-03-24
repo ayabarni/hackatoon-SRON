@@ -1,0 +1,18 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+:root {
+  --color-bg-darkblue: #1A1A39;
+  --bg-dark: #050505;
+  --text-light: #e0e0e0;
+  --accent: #ffffff;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: var(--color-bg-darkblue);
+}
