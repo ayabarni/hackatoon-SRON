@@ -6,8 +6,35 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="script/script.js" defer></script>
     <title>Nebula Xplorer</title>
+    <!-- Source: https://modelviewer.dev/ -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 <body>
-    <h1>Test 123</h1>
+    <header></header>
+    <main>
+            
+        <section class="rocket">
+
+            <model-viewer 
+                src="/3d/rocket2.glb"
+                auto-rotate
+                camera-controls
+                camera-orbit="auto 90deg auto"
+                min-camera-orbit="auto 90deg auto"
+                max-camera-orbit="auto 90deg auto"
+                disable-zoom>
+            </model-viewer>
+
+        </section>
+
+        <section class="satelliet">
+            <model-viewer 
+                src="/3d/satelliet.glb"
+                auto-rotate>
+            </model-viewer>
+        </section>
+
+    </main>
+    <footer></footer>
 </body>
 </html>
