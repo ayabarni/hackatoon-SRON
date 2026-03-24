@@ -40,3 +40,22 @@ function followMouse(e) {
 }
 
 followCursor()
+
+// MARK: zaklamp aan/uit
+const toggleInput = document.getElementById("flashlight-toggle");
+const toggleLabel = document.querySelector(".toggle-label");
+const overlay = document.querySelector(".overlay");
+
+if (toggleInput) {
+    toggleInput.addEventListener("change", (e) => {
+        if (e.target.checked) {
+            overlay.classList.remove("flashlight-off");
+            toggleLabel.innerText = "Flashlight: ON";
+            // document.body.style.cursor = "none";
+        } else {
+            overlay.classList.add("flashlight-off");
+            toggleLabel.innerText = "Flashlight: OFF";
+            // document.body.style.cursor = "auto";
+        }
+    });
+}

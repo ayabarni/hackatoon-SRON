@@ -15,4 +15,5 @@
 body {
   overflow-x: hidden;
   background-color: var(--color-bg-darkblue);
+  font-family: 'Courier New', Courier, monospace;
 }
