@@ -14,6 +14,14 @@ body {
   overflow: auto;
 }
 
+/* MARK: hamburger menu */
+/* Extra hover gebied als flashlight aan is */
+body:has(#flashlight-toggle:checked) .hamburger-btn::before {
+  content: "";
+  position: absolute;
+  inset: -50px;
+}
+
 /* MARK: grid */
 .information-grid {
   display: grid;
