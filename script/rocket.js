@@ -25,3 +25,34 @@ viewer.addEventListener('camera-change', () => {
   rocketTekstLinks.classList.toggle('block', grade180)
   rocketTekstRechts.classList.toggle('block', grade360)
 });
+
+
+// spot vinden
+// bron: https://modelviewer.dev/docs/#entrydocs-annotations-methods-positionAndNormalFromPoint
+viewer.addEventListener('load', () => {
+    viewer.addEventListener('click', (e) => {
+        const hit = viewer.positionAndNormalFromPoint(e.clientX, e.clientY);
+
+        if (hit) {
+            console.log(
+                `data-position="${hit.position.x.toFixed(3)} ${hit.position.y.toFixed(3)} ${hit.position.z.toFixed(3)}" data-normal="${hit.normal.x.toFixed(3)} ${hit.normal.y.toFixed(3)} ${hit.normal.z.toFixed(3)}"`
+            );
+        }
+    });
+});
+
+// timeout voor het uitvoeren van de action om naar de volgende pagina te gaan
+// bron: https://developer.mozilla.org/en-US/docs/Web/API/Window/setTimeout
+const volgendePaginaButton = document.querySelector(".click-button")
+
+volgendePaginaButton.addEventListener('click', (event) => {
+    event.preventDefault();
+
+    document.body.classList.add("pagina-verlaten")
+
+    setTimeout(() => {
+        console.log("halloooo");
+
+        window.location.href = event.target.href;
+    }, 2000);
+})

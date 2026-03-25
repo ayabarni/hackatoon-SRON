@@ -195,15 +195,6 @@ main {
 }
 }
 
-/* video */
-video {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-}
-
 /* vallende sterren */
 /* bron: https://codepen.io/delroyprithvi/pen/LYyJROR?editors=1100 */
 .sterren {
@@ -311,4 +302,73 @@ video {
     left: 60%;
     animation-delay: -2.75s;
     animation-duration: 2.75s;
+}
+
+.click-spot {
+    padding: 5px 5px;
+    color: rgba(20, 23, 56, 0.4);
+    background: transparent;
+    border: 1px solid transparent;
+    
+    transform: scale(1) rotate(0deg);
+    box-shadow: none;
+    text-shadow: none;
+    animation: none; 
+
+    &:hover {
+        color: white;
+        padding: 10px 10px;
+        background: rgba(235, 93, 53, 0.2);
+        border: 2px solid var(--color-orange);
+        transform: scale(1.1) rotate(-2deg);
+
+        box-shadow:
+        0 0 15px rgba(235, 93, 53, 0.5),
+        0 0 30px rgba(235, 93, 53, 0.3),
+        inset 0 0 15px rgba(235, 93, 53, 0.2);
+
+        text-shadow: 0 0 5px white, 0 0 10px var(--color-orange);
+        animation: pulseLaunchGlow 1.5s infinite alternate;
+
+        a {
+            color: white;
+        }
+    }
+    a {
+        text-decoration: none;
+        color: var(--color-orange);
+    }
+
+}
+
+/* Annimatie naar de Satellite scherm */
+@view-transition {
+    navigation: auto;
+}
+
+::view-transition-group(root) {
+    animation-duration: .3s;
+}
+
+body.pagina-verlaten {
+    model-viewer {
+        animation: vliegen 3s linear;
+    }
+}
+
+@keyframes vliegen {
+    0% {
+        transform: translate3d(0, 0, 0) rotate(20deg);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translate3d(0, 2.5rem, 0) rotate(16deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate3d(16rem, -30rem, 0) rotate(34deg) scale(0.92);
+        opacity: 0;
+    }
 }
