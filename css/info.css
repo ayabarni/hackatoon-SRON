@@ -2,10 +2,11 @@
   --color-orange: #EB5D35;
   --color-bg-darkblue: #292F6B;
   --color-bg-darkerblue: #141738;
+  --color-text: #fff;
 }
 
 h1 {
-  color: white;
+  color: var(--color-text);
 }
 
 body {
@@ -29,46 +30,50 @@ body:has(#flashlight-toggle:checked) .hamburger-btn::before {
   grid-template-rows: repeat(3, 1fr);
   width: 1600px;
   height: 1600px; 
-  padding: 50vh 50vw;
+  /* padding: 50vh 50vw; */
   box-sizing: border-box;
-  z-index: 1;
+  position: fixed;
+  inset: 0;
+  z-index: 3;
+
+  & p {
+    color: var(--color-text);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 350px;
+    margin: 0;
+
+    &:nth-child(1) {
+      grid-column: 2;
+      grid-row: 1;
+      align-self: end;
+      justify-self: end;
+    }
+
+    &:nth-child(2) {
+      grid-column: 3;
+      grid-row: 2;
+      align-self: center;
+      justify-self: end;
+    }
+
+    &:nth-child(3) {
+      grid-column: 1;
+      grid-row: 3;
+      align-self: end;
+      justify-self: center;
+    }
+  }
+
+  & a {
+    grid-column: 3;
+    grid-row: 3;
+    align-self: flex-end;
+    justify-self: end;
+  }
+
 }
 
-.information-grid p {
-  color: white;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  max-width: 350px;
-  margin: 0;
-}
-
-.information-grid p:nth-child(1) {
-  grid-column: 2;
-  grid-row: 1;
-  align-self: end;
-  justify-self: end;
-}
-
-.information-grid p:nth-child(2) {
-  grid-column: 3;
-  grid-row: 2;
-  align-self: center;
-  justify-self: end;
-}
-
-.information-grid p:nth-child(3) {
-  grid-column: 1;
-  grid-row: 3;
-  align-self: end;
-  justify-self: center;
-}
-
-.information-grid a {
-  grid-column: 3;
-  grid-row: 3;
-  align-self: flex-end;
-  justify-self: end;
-}
 
 /* MARK: zaklamp */
 .overlay {
@@ -118,40 +123,6 @@ body:has(.launch-button:hover) .cursor {
     transition: width 0.5s ease-out; 
 }
 
-@media (min-width: 768px) {
-  body {
-    overflow: hidden;
-  }
-  
-  .information-grid {
-    width: 100vw; 
-    height: 100vh;
-    padding: 4rem;
-  }
-
-  .information-grid p {
-    font-size: 1rem;
-    max-width: 260px; 
-  }
-
-  .cursor {
-    width: 10em;
-    left: calc(100% * var(--mouse-x, .5));
-    top: calc(100% * var(--mouse-y, .5));
-  }
-
-  .overlay.is-moving .cursor {
-    width: 25em;
-    transition: width 0.2s ease-out;
-  }
-}
-
-@media (min-width: 1024px) {
-  .information-grid p {
-    font-size: 1.1rem;
-    max-width: 350px; 
-  }
-}
 
 /* MARK: zaklamp aan/uit knop */
 .toggle-container {
@@ -167,7 +138,7 @@ body:has(.launch-button:hover) .cursor {
 
 .toggle-label {
   background: rgba(255, 255, 255, 0.1);
-  color: white;
+  color: var(--color-text);
   font-size: 0.9em;
   border: 1px solid rgba(255, 255, 255, 0.3);
   padding: 5px 10px;
@@ -208,7 +179,7 @@ body:has(#flashlight-toggle:not(:checked)) {
   letter-spacing: 3px;
   transition: all 0.5s ease-out;
 
-  color: white;
+  color: var(--color-text);
   padding: 10px 10px;
   background: rgba(235, 93, 53, 0.2);
   border: 2px solid var(--color-orange);
@@ -219,12 +190,12 @@ body:has(#flashlight-toggle:not(:checked)) {
     0 0 30px rgba(235, 93, 53, 0.3),
     inset 0 0 15px rgba(235, 93, 53, 0.2);
 
-  text-shadow: 0 0 5px white, 0 0 10px var(--color-orange);
+  text-shadow: 0 0 5px var(--color-text), 0 0 10px var(--color-orange);
   animation: pulseLaunchGlow 1.5s infinite alternate;
 }
 
 .launch-button:hover {
-  color: white;
+  color: var(--color-text);
   padding: 10px 10px;
   background: rgba(235, 93, 53, 0.2);
   border: 2px solid var(--color-orange);
@@ -235,7 +206,7 @@ body:has(#flashlight-toggle:not(:checked)) {
     0 0 30px rgba(235, 93, 53, 0.3),
     inset 0 0 15px rgba(235, 93, 53, 0.2);
 
-  text-shadow: 0 0 5px white, 0 0 10px var(--color-orange);
+  text-shadow: 0 0 5px var(--color-text), 0 0 10px var(--color-orange);
   animation: pulseLaunchGlow 1.5s infinite alternate;
 }
 
@@ -251,12 +222,80 @@ body:has(#flashlight-toggle:not(:checked)) {
     box-shadow:
       0 0 25px rgba(235, 93, 53, 0.8),
       0 0 50px rgba(235, 93, 53, 0.6);
-    border-color: white;
+    border-color: var(--color-text);
   }
 }
 
+
+
+
+
+
+
+
+
+.stars-container {
+  width: 100vw;
+  height: 100svh;
+  background-color: var(--color-bg-darkerblue);
+  position: relative;
+  overflow: hidden;
+}
+
+.star-css {
+  width: 4px;
+  height: 4px;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  position: absolute;
+   
+}
+
+
+
+
+.container {
+  position: absolute;
+  inset: 0;
+  width: 90vw;
+  height: 90svh;
+  z-index: 4;
+}
+
+.planet {
+  position: absolute;
+  width: clamp(6em, 15vw, 15em);
+  aspect-ratio: 1;
+  border-radius: 50%;
+
+  transform: translate(
+    calc(var(--x, 0) * 1px + var(--repel-x, 0) * 1px),
+    calc(var(--y, 0) * 1px + var(--repel-y, 0) * 1px)
+  );
+
+  transition: transform 0.08s linear;
+  /* overflow: hidden; */
+}
+
+
+.planet model-viewer {
+    
+    width: 100%;
+    height: 100%; 
+    display: block;
+}
+
+
+
+
+
+
+
+
 @media (min-width: 768px) {
-  
+  body {
+    overflow: hidden;
+  }
+
   .launch-button {
     padding: 5px 5px;
     color: rgba(20, 23, 56, 0.4);
@@ -268,20 +307,33 @@ body:has(#flashlight-toggle:not(:checked)) {
     text-shadow: none;
     animation: none; 
   }
+  
+  .information-grid {
+    width: 100vw; 
+    height: 100vh;
+    padding: 4rem;
+  }
 
-  .launch-button:hover {
-    color: white;
-    padding: 10px 10px;
-    background: rgba(235, 93, 53, 0.2);
-    border: 2px solid var(--color-orange);
-    transform: scale(1.1) rotate(-2deg);
+  .information-grid p {
+    font-size: 1rem;
+    max-width: 260px; 
+  }
 
-    box-shadow:
-      0 0 15px rgba(235, 93, 53, 0.5),
-      0 0 30px rgba(235, 93, 53, 0.3),
-      inset 0 0 15px rgba(235, 93, 53, 0.2);
+  .cursor {
+    width: 10em;
+    left: calc(100% * var(--mouse-x, .5));
+    top: calc(100% * var(--mouse-y, .5));
+  }
 
-    text-shadow: 0 0 5px white, 0 0 10px var(--color-orange);
-    animation: pulseLaunchGlow 1.5s infinite alternate;
+  .overlay.is-moving .cursor {
+    width: 25em;
+    transition: width 0.2s ease-out;
+  }
+}
+
+@media (min-width: 1024px) {
+  .information-grid p {
+    font-size: .75em;
+    max-width: 350px; 
   }
 }

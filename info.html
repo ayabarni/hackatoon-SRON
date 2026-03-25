@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/info.css">
+
+        <!-- Source: https://modelviewer.dev/ -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
     <script src="script/info.js" defer></script>
     <script src="script/menu.js" defer></script>
     <title>Information</title>
@@ -29,17 +33,85 @@
                 <li class="current-page"><a href="Exploration.html">Exploration</a></li>
             </ul>
         </nav>
-        
+
     </header>
     <div class="toggle-container">
         <input type="checkbox" id="flashlight-toggle" checked>
-        <label for="flashlight-toggle" class="toggle-label">Flashlight: ON</label>
+        <label for="flashlight-toggle" class="toggle-label">Flashlight: OFF</label>
     </div>
 
     <main>
         <div class="overlay">
             <div class="cursor"></div>
         </div>
+
+
+        <div class="stars-container">
+        </div>
+
+        <div class="container">
+            <!-- 1 -->
+            <div class="planet">
+                <model-viewer class="erth-model" src="./3d/fire_planet.glb" auto-rotate>
+                </model-viewer>
+            </div>
+            <!-- 2 -->
+            <div class="planet">
+                <model-viewer class="erth-model" src="./3d/planet_venus.glb" auto-rotate>
+                </model-viewer>
+            </div>
+            <!-- 3 -->
+            <div class="planet">
+                <model-viewer class="erth-model" src="./3d/mercury_planet.glb" auto-rotate>
+                </model-viewer>
+            </div>
+            <!-- 4 -->
+            <div class="planet">
+                <model-viewer class="erth-model" src="./3d/lava_planet.glb" auto-rotate>
+                </model-viewer>
+            </div>
+            <!-- 5 -->
+            <div class="planet">
+                <model-viewer class="erth-model" src="./3d/planet.glb" auto-rotate>
+                </model-viewer>
+            </div>
+            <!-- 6 -->
+            <div class="planet">
+                <model-viewer class="erth-model" src="./3d/pluto.glb" auto-rotate>
+                </model-viewer>
+            </div>
+            <!-- 7 -->
+            <div class="planet">
+                <model-viewer class="erth-model" src="./3d/planet_beta_hydri___free_sample.glb" auto-rotate>
+                </model-viewer>
+            </div>
+            <!-- 8 -->
+            <div class="planet">
+                <model-viewer class="erth-model" src="./3d/planet_nine.glb" auto-rotate>
+                </model-viewer>
+            </div>
+            <!-- 9 -->
+            <div class="planet">
+                <model-viewer class="erth-model" src="./3d/moon_planet.glb" auto-rotate>
+                </model-viewer>
+            </div>
+            <!-- 10 -->
+            <div class="planet">
+                <model-viewer class="erth-model" src="./3d/planet2.glb" auto-rotate>
+                </model-viewer>
+            </div>
+            <!-- 11 -->
+            <div class="planet">
+                <model-viewer class="erth-model" src="./3d/green_planet.glb" auto-rotate>
+                </model-viewer>
+            </div>
+            <!-- 12 -->
+            <div class="planet">
+                <model-viewer class="erth-model" src="./3d/mercury_enhanced_color.glb" auto-rotate>
+                </model-viewer>
+            </div>
+        </div>
+
 
         <div class="information-grid">
             <p>When a star approaches too close to a black hole, it is torn apart by the immense gravity. This offers

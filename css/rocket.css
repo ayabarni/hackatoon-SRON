@@ -2,8 +2,17 @@
     box-sizing: border-box;
 }
 
+:root {
+  --color-orange: #EB5D35;
+  --color-bg-darkblue: #292F6B;
+  --color-bg-darkerblue: #141738;
+  --color-text: #fff;
+  --color-bg-darkerblue-rgba: 20, 23, 56;
+}
+
 body {
-    background-color: rgb(21, 21, 39);
+    /* background-color: rgb(21, 21, 39); */
+    background-color: var(--color-bg-darkerblue);
     overflow-x: hidden;
     overflow-y: hidden;
 }
@@ -47,13 +56,13 @@ main {
 
 /* p display none en weer block bij deg */
 .rocket p {
-    color: white;
+    color: var(--color-text);
     width: min(100%, 22rem);
     height: fit-content;
     padding: 0.5rem;
     font-size: clamp(0.9rem, 1vw, 0.95rem);
 
-    border: 3px double white;
+    border: 3px double var(--color-text);
     text-align: center;
     display: none;
 }
@@ -70,10 +79,10 @@ main {
 
     anchor-scope: --tekst-1;
 
-     svg {
-    anchor-name: --tekst-1;
-    justify-self: end;
-}
+    svg {
+        anchor-name: --tekst-1;
+        justify-self: end;
+    }
 
     
     p {
@@ -91,7 +100,7 @@ main {
 
     anchor-scope: --tekst-2;
 
-     svg {
+    svg {
         anchor-name: --tekst-2;
         transform: scaleX(-1);
         transform-origin: center;
@@ -138,7 +147,9 @@ main {
     display: block;
 }
 
-/* clitch effect */
+
+
+/* glitch effect */
 
 
 @media (max-width: 900px) {
@@ -327,7 +338,10 @@ main {
         0 0 30px rgba(235, 93, 53, 0.3),
         inset 0 0 15px rgba(235, 93, 53, 0.2);
 
-        text-shadow: 0 0 5px white, 0 0 10px var(--color-orange);
+        text-shadow: 
+            0 0 5px var(--color-text), 
+            0 0 10px var(--color-orange);
+
         animation: pulseLaunchGlow 1.5s infinite alternate;
     }
     
