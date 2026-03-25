@@ -26,6 +26,8 @@ main {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     gap: clamp(1rem, 2vw, 1.5rem);
+    position: relative;
+    overflow: hidden;
 }
 
 .rocket model-viewer {
@@ -203,42 +205,40 @@ video {
 }
 
 /* vallende sterren */
+/* bron: https://codepen.io/delroyprithvi/pen/LYyJROR?editors=1100 */
 .sterren {
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: 0;
     width: 100%;
-    height: 100vh;
-    border-radius: 50%;
-    z-index: 10000000;
+    height: 100%;
+    z-index: 2;
     pointer-events: none;
 }
 
-span {
+.sterren span {
     position: absolute;
     top: 50%;
     left: 50%;
     width: 4px;
-    right: 4px;
-    background: white;
+    background: var(--color-orange);
     box-shadow: 0 0 0 4px rgba(255,255,255,0.1),0 0 0 8px rgba(255,255,255,0.1),0 0 20px rgba(255,255,255,0.1);
     animation: vallen 3s linear infinite;
 }
 
-span::before{
+.sterren span::before{
     content:'';
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     width: 300px;
     height: 1px;
-    background: linear-gradient(90deg,#fff,transparent);
+    background: linear-gradient(90deg,var(--color-orange),transparent);
 }
 
 /* annimatie vallende sterren */
 @keyframes vallen {
  0% {
-    transform: rotate(320deg) translate(0);
+    transform: rotate(-70deg) translate(1000px);
     opacity: 1;
  }
 
@@ -247,78 +247,68 @@ span::before{
  }
 
  100% {
-    transform: rotate(320deg) translate(-1000px);
+    transform: rotate(-70deg) translate(-1000px);
     opacity: 0;
  }
 }
 
 .sterren span:nth-child(1){
-    top: 0;
-    right: 0;
-    left: initial;
-    animation-delay: 0s;
+    top: 6%;
+    left: 8%;
+    animation-delay: -0s;
     animation-duration: 1s;
 }
 .sterren span:nth-child(2){
-    top: 0;
-    right: 80px;
-    left: initial;
-    animation-delay: 0.2s;
+    top: 14%;
+    left: 18%;
+    animation-delay: -0.2s;
     animation-duration: 3s;
 }
 .sterren span:nth-child(3){
-    top: 80;
-    right: 0px;
-    left: initial;
-    animation-delay: 0.4s;
+    top: 24%;
+    left: 30%;
+    animation-delay: -0.4s;
     animation-duration: 2s;
 }
 .sterren span:nth-child(4){
-    top: 0;
-    right: 180px;
-    left: initial;
-    animation-delay: 0.6s;
+    top: 10%;
+    left: 42%;
+    animation-delay: -0.6s;
     animation-duration: 1.5s;
 }
 .sterren span:nth-child(5){
-    top: 0;
-    right: 400px;
-    left: initial;
-    animation-delay: 0.8s;
+    top: 18%;
+    left: 54%;
+    animation-delay: -0.8s;
     animation-duration: 2.5s;
 }
 .sterren span:nth-child(6){
-    top: 0;
-    right: 600px;
-    left: initial;
-    animation-delay: 1s;
+    top: 8%;
+    left: 66%;
+    animation-delay: -1s;
     animation-duration: 3s;
 }
 .sterren span:nth-child(7){
-    top: 300px;
-    right: 0px;
-    left: initial;
-    animation-delay: 1.2s;
+    top: 36%;
+    left: 74%;
+    animation-delay: -1.2s;
     animation-duration: 1.75s;
 }
 .sterren span:nth-child(8){
-    top: 0px;
-    right: 700px;
-    left: initial;
-    animation-delay: 1.4s;
+    top: 16%;
+    left: 82%;
+    animation-delay: -1.4s;
     animation-duration: 1.25s;
 }
 .sterren span:nth-child(9){
-    top: 0px;
-    right: 1000px;
-    left: initial;
-    animation-delay: 0.75s;
+    top: 12%;
+    left: 92%;
+    animation-delay: -0.75s;
     animation-duration: 2.25s;
 }
-.sterren span:nth-child(9){
-    top: 0px;
-    right: 450px;
-    left: initial;
-    animation-delay: 2.75s;
+.sterren span:nth-child(10){
+    top: 28%;
+    left: 60%;
+    animation-delay: -2.75s;
     animation-duration: 2.75s;
 }
