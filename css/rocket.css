@@ -314,6 +314,8 @@ main {
     box-shadow: none;
     text-shadow: none;
     animation: none; 
+    color: var(--color-orange);
+    text-decoration: none;
 
     &:hover {
         color: white;
@@ -329,15 +331,8 @@ main {
 
         text-shadow: 0 0 5px white, 0 0 10px var(--color-orange);
         animation: pulseLaunchGlow 1.5s infinite alternate;
-
-        a {
-            color: white;
-        }
     }
-    a {
-        text-decoration: none;
-        color: var(--color-orange);
-    }
+    
 
 }
 
