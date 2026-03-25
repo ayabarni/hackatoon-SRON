@@ -15,7 +15,7 @@
 
 body {
   background-color: var(--color-bg-darkblue);
-  font-family: 'Courier New', Courier, monospace;
+  font-family: monospace, Courier;
 }
 
 /* MARK: hamburger menu */
@@ -160,7 +160,7 @@ body:has(.hamburger-btn:hover) main {
   
   .fullscreen-menu ul {
         position: fixed;
-        top: 30px; 
+        top: 1px; 
         left: 120px; 
         right: 40px; 
         display: flex;
@@ -175,6 +175,7 @@ body:has(.hamburger-btn:hover) main {
     .fullscreen-menu a {
         font-size: 1.2rem; 
         letter-spacing: 2px;
+        padding: 1.5em;
     }
 
     .fullscreen-menu li {
