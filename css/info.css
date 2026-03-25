@@ -1,19 +1,25 @@
 :root {
-    --color-orange: #EB5D35;
-    --color-bg-darkblue: #292F6B;
-    --color-bg-darkerblue: #141738;
+  --color-orange: #EB5D35;
+  --color-bg-darkblue: #292F6B;
+  --color-bg-darkerblue: #141738;
 }
 
 h1 {
-    color: white;
+  color: white;
 }
 
 body {
-    background-color: var(--color-bg-darkblue);
-    cursor: none;
-    margin: 0;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+}
 
-    min-height: 300svh;
+/* MARK: hamburger menu */
+/* Extra hover gebied als flashlight aan is */
+body:has(#flashlight-toggle:checked) .hamburger-btn::before {
+  content: "";
+  position: absolute;
+  inset: -50px;
 }
 
 /* MARK: grid */
@@ -21,16 +27,15 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  width: 100vw;
-  min-height: 100vh;
-  padding: 4rem;
+  width: 1600px;
+  height: 1600px; 
+  padding: 50vh 50vw;
   box-sizing: border-box;
-  z-index: 1; 
+  z-index: 1;
 }
 
 .information-grid p {
-  color: white; 
-  font-family: 'Courier New', Courier, monospace;
+  color: white;
   font-size: 1.1rem;
   line-height: 1.6;
   max-width: 350px;
@@ -38,49 +43,245 @@ body {
 }
 
 .information-grid p:nth-child(1) {
-  grid-column: 1;
+  grid-column: 2;
   grid-row: 1;
+  align-self: end;
+  justify-self: end;
 }
 
 .information-grid p:nth-child(2) {
-  grid-column: 3; 
-  grid-row: 2;    
-  align-self: center; 
-  justify-self: end; 
+  grid-column: 3;
+  grid-row: 2;
+  align-self: center;
+  justify-self: end;
 }
 
 .information-grid p:nth-child(3) {
-  grid-column: 2;
+  grid-column: 1;
   grid-row: 3;
   align-self: end;
   justify-self: center;
 }
 
+.information-grid a {
+  grid-column: 3;
+  grid-row: 3;
+  align-self: flex-end;
+  justify-self: end;
+}
+
 /* MARK: zaklamp */
 .overlay {
-    position: fixed;
-    inset: 0;
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
 }
 
 .cursor {
-    width: 10em;
-    aspect-ratio: 1;
-    border-radius: 50%;
-    position: absolute;
+  width: 20em;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  position: absolute;
 
-    left: calc(100% * var(--mouse-x, .5));
-    top: calc(100% * var(--mouse-y, .5));
-    transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 
-    box-shadow:
-        inset 0 0 0 1.5px var(--color-orange),
-        35px -20px 70px 30px var(--color-orange),
-        0 0 0 200vmax var(--color-bg-darkerblue);
+  background: radial-gradient(
+              circle at center,
+              rgba(var(--color-bg-darkerblue-rgba), 0) 0em,
+              rgba(var(--color-bg-darkerblue-rgba), 0.2) calc(var(--width) / 2), 
+              rgba(var(--color-bg-darkerblue-rgba), 0.9) calc(var(--width) / 2)
+              );
 
-    transition: width 0.5s ease-out;
+  box-shadow:
+    inset 0 0 0 1px var(--color-orange),
+    inset 0 0 20px var(--color-orange),
+    inset 0 0 100px var(--color-bg-darkerblue),
+    0 0 40px var(--color-orange),
+    0 0 100px var(--color-orange),
+    0 0 120px var(--color-orange),
+    0 0 200px var(--color-orange),
+    0 0 0 200vmax var(--color-bg-darkerblue);
+
+  transition: width 0.5s ease-out, opacity 0.5s ease;
 }
 
 .overlay.is-moving .cursor {
+  width: 20em;
+  transition: width 0.2s ease-out;
+}
+
+body:has(.launch-button:hover) .cursor {
+    width: 22em; 
+    transition: width 0.5s ease-out; 
+}
+
+@media (min-width: 768px) {
+  body {
+    overflow: hidden;
+  }
+  
+  .information-grid {
+    width: 100vw; 
+    height: 100vh;
+    padding: 4rem;
+  }
+
+  .information-grid p {
+    font-size: 1rem;
+    max-width: 260px; 
+  }
+
+  .cursor {
+    width: 10em;
+    left: calc(100% * var(--mouse-x, .5));
+    top: calc(100% * var(--mouse-y, .5));
+  }
+
+  .overlay.is-moving .cursor {
     width: 25em;
     transition: width 0.2s ease-out;
+  }
+}
+
+@media (min-width: 1024px) {
+  .information-grid p {
+    font-size: 1.1rem;
+    max-width: 350px; 
+  }
+}
+
+/* MARK: zaklamp aan/uit knop */
+.toggle-container {
+  position: fixed;
+  top: 40px;
+  right: 40px;
+  z-index: 200;
+}
+
+#flashlight-toggle {
+  display: none;
+}
+
+.toggle-label {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 0.9em;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 5px 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.toggle-label:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.overlay.flashlight-off .cursor {
+  opacity: 0;
+  pointer-events: none;
+}
+
+body:has(#flashlight-toggle:checked) {
+  cursor: none;
+}
+
+body:has(#flashlight-toggle:not(:checked)) {
+  cursor: auto;
+}
+
+/* MARK: launch button */
+.launch-button {
+  display: inline-block;
+  border-radius: 5px;
+  text-decoration: none;
+  z-index: 1;
+
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  transition: all 0.5s ease-out;
+
+  color: white;
+  padding: 10px 10px;
+  background: rgba(235, 93, 53, 0.2);
+  border: 2px solid var(--color-orange);
+  transform: scale(1.1) rotate(-2deg);
+
+  box-shadow:
+    0 0 15px rgba(235, 93, 53, 0.5),
+    0 0 30px rgba(235, 93, 53, 0.3),
+    inset 0 0 15px rgba(235, 93, 53, 0.2);
+
+  text-shadow: 0 0 5px white, 0 0 10px var(--color-orange);
+  animation: pulseLaunchGlow 1.5s infinite alternate;
+}
+
+.launch-button:hover {
+  color: white;
+  padding: 10px 10px;
+  background: rgba(235, 93, 53, 0.2);
+  border: 2px solid var(--color-orange);
+  transform: scale(1.1) rotate(-2deg);
+
+  box-shadow:
+    0 0 15px rgba(235, 93, 53, 0.5),
+    0 0 30px rgba(235, 93, 53, 0.3),
+    inset 0 0 15px rgba(235, 93, 53, 0.2);
+
+  text-shadow: 0 0 5px white, 0 0 10px var(--color-orange);
+  animation: pulseLaunchGlow 1.5s infinite alternate;
+}
+
+@keyframes pulseLaunchGlow {
+  0% {
+    box-shadow:
+      0 0 15px rgba(235, 93, 53, 0.5),
+      0 0 30px rgba(235, 93, 53, 0.3);
+    border-color: var(--color-orange);
+  }
+
+  100% {
+    box-shadow:
+      0 0 25px rgba(235, 93, 53, 0.8),
+      0 0 50px rgba(235, 93, 53, 0.6);
+    border-color: white;
+  }
+}
+
+@media (min-width: 768px) {
+  
+  .launch-button {
+    padding: 5px 5px;
+    color: rgba(20, 23, 56, 0.4);
+    background: transparent;
+    border: 1px solid transparent;
+    
+    transform: scale(1) rotate(0deg);
+    box-shadow: none;
+    text-shadow: none;
+    animation: none; 
+  }
+
+  .launch-button:hover {
+    color: white;
+    padding: 10px 10px;
+    background: rgba(235, 93, 53, 0.2);
+    border: 2px solid var(--color-orange);
+    transform: scale(1.1) rotate(-2deg);
+
+    box-shadow:
+      0 0 15px rgba(235, 93, 53, 0.5),
+      0 0 30px rgba(235, 93, 53, 0.3),
+      inset 0 0 15px rgba(235, 93, 53, 0.2);
+
+    text-shadow: 0 0 5px white, 0 0 10px var(--color-orange);
+    animation: pulseLaunchGlow 1.5s infinite alternate;
+  }
 }
