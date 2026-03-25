@@ -387,3 +387,13 @@ model-viewer {
         top: 24%;
     }
 }
+
+@view-transition {
+    navigation: auto;
+}
+ 
+::view-transition-group(root) {
+    animation-duration: .3s;
+}
+ 
+

@@ -18,8 +18,6 @@ main {
 .rocket {
     min-height: 100vh;
     width: 100%;
-    max-width: 1300px;
-    margin: 0 auto;
     padding: clamp(1rem, 3vw, 2rem);
     box-sizing: border-box;
     display: grid;
