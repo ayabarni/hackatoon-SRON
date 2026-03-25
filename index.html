@@ -7,17 +7,36 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/index.css">
     <script src="script/index.js" defer></script>
+    <script src="script/menu.js" defer></script>
     <title>Nebula Xplorer</title>
     <!-- Source: https://modelviewer.dev/ -->
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 
+
 <body>
-    <header></header>
+    <header>
+
+        <button class="hamburger-btn" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="fullscreen-menu">
+            <ul>
+                <li><a href="index.html">Introduction</a></li>
+                <li><a href="info.html">Exploration</a></li>
+                <li><a href="rocket.html">Launch</a></li>
+                <li><a href="satellite.html">Satellite</a></li>
+            </ul>
+        </nav>
+
+    </header>
     <main class="stacked-layout">
 
         <section class="mila-video-bh">
-            <video muted preload="auto">
+            <video loop muted preload="auto">
                 <source src="./videos/video-blackhole.mp4" type="video/mp4">
             </video>
         </section>

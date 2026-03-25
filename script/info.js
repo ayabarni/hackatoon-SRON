@@ -1,8 +1,9 @@
-const lightCursor = document.querySelector(".cursor")
+const lightCursor = document.querySelector(".cursor");
+const overlayElement = document.querySelector(".overlay");
 let movingTimer;
 
 function followCursor() {
-    document.querySelector(".overlay").addEventListener("mousemove", followMouse)
+    window.addEventListener("mousemove", followMouse);
 }
 
 // https://codepen.io/shooft/pen/GROwdqd
@@ -10,33 +11,22 @@ function followMouse(e) {
     let mouseX = e.clientX;
     let mouseY = e.clientY;
 
-    // we slaan het element voor het gemak even op
-    const element = e.currentTarget;
+    let windowWidth = window.innerWidth;
+    let windowHeight = window.innerHeight;
 
-    // info opvragen over de afmetingen en positie
-    const elementRectangle = element.getBoundingClientRect();
+    let x = mouseX / windowWidth;
+    let y = mouseY / windowHeight;
 
-    // de breedte en hoogte opslaan
-    let elementWidth = elementRectangle.width;
-    let elementHeight = elementRectangle.height;
+    overlayElement.style.setProperty("--mouse-x", x);
+    overlayElement.style.setProperty("--mouse-y", y);
 
-
-    let x = mouseX / elementWidth;
-    let y = mouseY / elementHeight;
-
-    element.style.setProperty("--mouse-x", x);
-    element.style.setProperty("--mouse-y", y);
-
-    element.classList.add("is-moving");
+    overlayElement.classList.add("is-moving");
 
     clearTimeout(movingTimer);
 
-    // element.classList.remove("not-moving");
-
     movingTimer = setTimeout(() => {
-        element.classList.remove("is-moving");
+        overlayElement.classList.remove("is-moving");
     }, 250);
-
 }
 
 followCursor()
@@ -51,11 +41,9 @@ if (toggleInput) {
         if (e.target.checked) {
             overlay.classList.remove("flashlight-off");
             toggleLabel.innerText = "Flashlight: ON";
-            // document.body.style.cursor = "none";
         } else {
             overlay.classList.add("flashlight-off");
             toggleLabel.innerText = "Flashlight: OFF";
-            // document.body.style.cursor = "auto";
         }
     });
 }
