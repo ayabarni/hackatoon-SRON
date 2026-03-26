@@ -1,5 +1,6 @@
 console.log("Hello world!");
 // bron: https://modelviewer.dev/examples/stagingandcameras/#cameraOrbit\
+// prompt: kan je helpen bij het luisteren naar de degrees wanneer er gedraait wrdt
 
 /* kleur wijzigen als racket gedraaid is naar 180 grade */
 const rocketSection = document.querySelector('.rocket');
