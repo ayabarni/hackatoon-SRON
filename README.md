@@ -39,10 +39,3 @@ Ergens bij ‘observatie’ een klikbaar sterretje -> bij klikken wordt de satel
 
 
 
-
-
-
-hero section
-rocket section 
-sattelite section 
-de content 
