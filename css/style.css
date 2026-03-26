@@ -20,6 +20,18 @@ body {
   font-family: monospace, Courier;
 }
 
+.active-nav::after {
+    content: "";
+    position: absolute;
+    inset: auto auto 0 0;
+    width: 100%;
+    height: 2px;
+    background: var(--color-orange);
+    box-shadow: 
+        0 0 10px var(--color-orange), 
+        0 0 10px var(--color-orange);
+}
+
 /* MARK: hamburger menu */
 .hamburger-btn {
     position: fixed;
