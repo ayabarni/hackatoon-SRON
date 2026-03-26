@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/satellite.css">
+    <script src="./script/satellite.js" defer></script>
+    <script src="./script/menu.js" defer></script>
+    <title>Nebula Xplorer</title>
+    <!-- Source: https://modelviewer.dev/ -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <link rel="icon" type="image/png" href="./images/flavicon.png">
+</head>
+
+<body>
+    <header>
+        <button class="hamburger-btn" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="fullscreen-menu">
+            <ul>
+                <li><a href="index.html">Introduction</a></li>
+                <li><a href="info.html">Exploration</a></li>
+                <li><a href="rocket.html">Launch</a></li>
+                <li><a href="satellite.html" class="active-nav">Satellite</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+
+        <!-- <section class="rocket">
+
+            <model-viewer src="/3d/rocket3.glb" auto-rotate camera-controls camera-orbit="auto 90deg auto"
+                min-camera-orbit="auto 90deg auto" max-camera-orbit="auto 90deg auto" reveal="auto" disable-zoom>
+            </model-viewer>
+
+        </section> -->
+
+        <!-- <section class="satelliet">
+            <model-viewer src="/3d/satelliet.glb" auto-rotate>
+            </model-viewer>
+        </section> -->
+
+        <div class="stars-container"></div>
+
+        <section class="satelliet-section">
+
+            <div class="scene">
+                <!-- <div class="erth"></div> -->
+                <div class="erth-box">
+                    <model-viewer class="erth-model" src="./3d/earth2.glb" auto-rotate>
+                    </model-viewer>
+                </div>
+                <div class="orbit">
+                    <model-viewer src="./3d/satelliet.glb" auto-rotate>
+                    </model-viewer>
+                </div>
+
+                <button id="activate-btn" class="activate-btn">SCAN SATELLITE DATA</button>
+
+                <a href="/outro.html" id="send-data-btn" class="send-data-btn is-hidden">SEND DATA TO EARTH</a>
+
+                <div class="info" id="info-panel">
+
+                    <div class="info-controls">
+                        <button id="prev-btn" class="nav-btn">&#9664;</button>
+                        <span class="slide-counter">1 / 3</span>
+                        <button id="next-btn" class="nav-btn">&#9654;</button>
+                    </div>
+
+                    <article class="info-slide active">
+                        <h3 data-text="Guided by mirrors"></h3>
+                        <p data-text="X-ray radiation cannot be captured with traditional lenses. Therefore, NEBULA uses hundreds of concentric, cylindrical mirrors that guide the incoming radiation toward the detectors at an extremely shallow angle.">
+                        </p>
+                    </article>
+
+                    <article class="info-slide">
+                        <h3 data-text="Stable cooling at -35°C"></h3>
+                        <p data-text="To register the faintest X-ray signals from the distant cosmos, thermal noise must be completely eliminated. The instrumentation is therefore continuously and highly stably cooled to exactly -35°C.">
+                        </p>
+                    </article>
+
+                    <article class="info-slide">
+                        <h3 data-text="Data sent to earth"></h3>
+                        <p data-text="The raw observation data is transmitted directly from Earth orbit to our ground stations. This enables researchers to empirically test theories about the evolution of galaxies.">
+                        </p>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+    <footer></footer>
+</body>
+
+</html>

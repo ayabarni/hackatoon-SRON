@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="script/index.js" defer></script>
+    <script src="script/menu.js" defer></script>
+    <title>Nebula Xplorer</title>
+    <!-- Source: https://modelviewer.dev/ -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <link rel="icon" type="image/png" href="./images/flavicon.png">
+</head>
+
+
+<body>
+    <header>
+
+        <button class="hamburger-btn" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="fullscreen-menu">
+            <ul>
+                <li><a href="index.html" class="active-nav">Introduction</a></li>
+                <li><a href="info.html">Exploration</a></li>
+                <li><a href="rocket.html">Launch</a></li>
+                <li><a href="satellite.html">Satellite</a></li>
+            </ul>
+        </nav>
+
+    </header>
+    <main class="stacked-layout">
+
+        <section class="mila-video-bh">
+            <video loop muted>
+                <source src="./videos/video-blackhole.mp4" type="video/mp4">
+            </video>
+        </section>
+
+        <button id="skip-btn" class="skip-button">Skip introduction &darr;</button>
+
+        <div class="jeppe-scroll">
+            <div class="scroll-container">
+                <section class="spacer">
+                    <h1>THE NEBULA XPLORER</h1>
+                    <img src="./images/SRON-logo-white.webp" alt="SRON logo">
+                </section>
+                <section class="snap-section">
+                    <h2>Our mission</h2>
+                    <div class="text-container">
+                        <p class="typewriter"
+                            data-text="SRON develops and co-builds groundbreaking space missions for scientific research. With the NEBULA XPLORER, we set our sights on the most extreme gravitational fields in the universe. Starting in 2030, this satellite will study how supermassive black holes awaken and devour matter. A fundamental quest into the dynamics of the cosmos, to make the invisible visible.">
+                        </p>
+                    </div>
+                    <div class="text-container">
+                        <p class="typewriter"
+                            data-text="Parallel to its scientific objectives, the NEBULA XPLORER is an ambitious educational mission. From conceptualization to final realization, this entire project is designed and executed by students. It is a statement of capability, empowering the next generation of engineers and designers to redefine space technology and academic collaboration.">
+                        </p>
+                    </div>
+                </section>
+                <section class="spacer">
+                    <a href="info.html" class="next-page-btn">
+                        <p></p>
+                    </a>
+                </section>
+            </div>
+        </div>
+
+    </main>
+    <footer></footer>
+</body>
+
+</html>

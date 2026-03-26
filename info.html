@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/info.css">
+
+        <!-- Source: https://modelviewer.dev/ -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+    <script src="script/info.js" defer></script>
+    <script src="script/menu.js" defer></script>
+    <link rel="icon" type="image/png" href="./images/flavicon.png">
+    <title>Information</title>
+</head>
+
+<body>
+    <header>
+
+        <button class="hamburger-btn" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="fullscreen-menu">
+            <ul>
+                <li><a href="index.html">Introduction</a></li>
+                <li><a href="info.html" class="active-nav">Exploration</a></li>
+                <li><a href="rocket.html">Launch</a></li>
+                <li><a href="satellite.html">Satellite</a></li>
+            </ul>
+        </nav>
+
+    </header>
+    <div class="toggle-container">
+        <input type="checkbox" id="flashlight-toggle" checked>
+        <label for="flashlight-toggle" class="toggle-label">Flashlight: OFF</label>
+    </div>
+
+    <main>
+        <div class="overlay">
+            <div class="cursor"></div>
+        </div>
+
+
+        <div class="stars-container">
+        </div>
+
+        <div class="container">
+            <!-- 1 -->
+            <div class="planet">
+                <model-viewer class="erth-model" src="./3d/fire_planet.glb" auto-rotate>
+                </model-viewer>
+            </div>
+            <!-- 2 -->
+            <div class="planet">
+                <model-viewer class="erth-model" src="./3d/planet_venus.glb" auto-rotate>
+                </model-viewer>
+            </div>
+            <!-- 3 -->
+            <div class="planet">
+                <model-viewer class="erth-model" src="./3d/mercury_planet.glb" auto-rotate>
+                </model-viewer>
+            </div>
+            <!-- 4 -->
+            <div class="planet">
+                <model-viewer class="erth-model" src="./3d/lava_planet.glb" auto-rotate>
+                </model-viewer>
+            </div>
+            <!-- 5 -->
+            <div class="planet">
+                <model-viewer class="erth-model" src="./3d/planet.glb" auto-rotate>
+                </model-viewer>
+            </div>
+            <!-- 6 -->
+            <div class="planet">
+                <model-viewer class="erth-model" src="./3d/pluto.glb" auto-rotate>
+                </model-viewer>
+            </div>
+            <!-- 7 -->
+            <div class="planet">
+                <model-viewer class="erth-model" src="./3d/planet_beta_hydri___free_sample.glb" auto-rotate>
+                </model-viewer>
+            </div>
+            <!-- 8 -->
+            <div class="planet">
+                <model-viewer class="erth-model" src="./3d/planet_nine.glb" auto-rotate>
+                </model-viewer>
+            </div>
+            <!-- 9 -->
+            <div class="planet">
+                <model-viewer class="erth-model" src="./3d/moon_planet.glb" auto-rotate>
+                </model-viewer>
+            </div>
+            <!-- 10 -->
+            <div class="planet">
+                <model-viewer class="erth-model" src="./3d/planet2.glb" auto-rotate>
+                </model-viewer>
+            </div>
+            <!-- 11 -->
+            <div class="planet">
+                <model-viewer class="erth-model" src="./3d/green_planet.glb" auto-rotate>
+                </model-viewer>
+            </div>
+            <!-- 12 -->
+            <div class="planet">
+                <model-viewer class="erth-model" src="./3d/mercury_enhanced_color.glb" auto-rotate>
+                </model-viewer>
+            </div>
+        </div>
+
+
+        <div class="information-grid">
+            <p>When a star approaches too close to a black hole, it is torn apart by the immense gravity. This offers
+                astronomers a rare glimpse into the immediate surroundings of the black hole.</p>
+            <p>Black holes themselves do not emit light. NEBULA captures the intense X-ray radiation released when
+                heated stellar material spirals inwards at high speed.</p>
+            <p>By studying these high-energy signals, we expand our understanding of fundamental physics and test
+                theories under conditions that are impossible to replicate on Earth.</p>
+        </div>
+        <a href="rocket.html" class="launch-button">Launch Satellite</a>
+    </main>
+</body>
+
+</html>
