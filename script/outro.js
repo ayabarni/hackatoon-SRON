@@ -15,7 +15,7 @@
 //     });
 // });
 
-// voeg clas to na 2.5s
+// voeg clas toe na 2.5s
 document.addEventListener("DOMContentLoaded", () => {
     const outroTekst = document.querySelector(".outro-tekst");
 
