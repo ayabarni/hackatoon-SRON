@@ -15,8 +15,6 @@ body {
   overflow: hidden;
 }
 
-
-
 /* MARK: hamburger menu */
 /* Extra hover gebied als flashlight aan is */
 body:has(#flashlight-toggle:checked) .hamburger-btn::before {
@@ -76,13 +74,12 @@ body:has(#flashlight-toggle:checked) .hamburger-btn::before {
 
 }
 
-
 /* MARK: zaklamp */
 .overlay {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  z-index: 50;
+  z-index: 1000;
 }
 
 .cursor {
@@ -231,14 +228,6 @@ body:has(#flashlight-toggle:not(:checked)) {
   }
 }
 
-
-
-
-
-
-
-
-
 .stars-container {
   width: 100vw;
   height: 100svh;
@@ -254,9 +243,6 @@ body:has(#flashlight-toggle:not(:checked)) {
   clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
   position: absolute;
 }
-
-
-
 
 .container {
   position: absolute;
