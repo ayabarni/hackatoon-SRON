@@ -1,0 +1,104 @@
+/* .mila-video-bh video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+    transition: transform 1.5s ease-in;
+
+    transform: scale(12);
+    transition: transform 3s ease-in;
+}
+
+
+.mila-video-bh video.video-zoom-out {
+    transform: scale(1);
+} */
+
+.mila-video-bh video {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    animation: zoomOut 3s ease-in forwards;
+}
+
+@keyframes zoomOut {
+    from {
+        transform: scale(12);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+/* outro tekst */
+.outro-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.outro-tekst {
+    max-width: 40rem;
+    text-align: center;
+    color: white;
+    background: rgba(10, 10, 20, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 1.5rem;
+    margin: 5rem;
+
+    div {
+        margin-bottom: 2rem;
+    }
+}
+
+.outro-tekst {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.outro-tekst.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* button styling */
+.terug-naar-home {
+    padding: 5px 5px;
+    color: rgba(20, 23, 56, 0.4);
+    background: transparent;
+    border: 1px solid transparent;
+    
+    transform: scale(1) rotate(0deg);
+    box-shadow: none;
+    text-shadow: none;
+    animation: none; 
+    color: var(--color-orange);
+    text-decoration: none;
+
+    &:hover {
+        color: white;
+        padding: 10px 10px;
+        background: rgba(235, 93, 53, 0.2);
+        border: 2px solid var(--color-orange);
+        transform: scale(1.1) rotate(-2deg);
+
+        box-shadow:
+        0 0 15px rgba(235, 93, 53, 0.5),
+        0 0 30px rgba(235, 93, 53, 0.3),
+        inset 0 0 15px rgba(235, 93, 53, 0.2);
+
+        text-shadow: 0 0 5px white, 0 0 10px var(--color-orange);
+        animation: pulseLaunchGlow 1.5s infinite alternate;
+    }
+    
+
+}
