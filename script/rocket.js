@@ -29,6 +29,7 @@ viewer.addEventListener('camera-change', () => {
 
 // spot vinden
 // bron: https://modelviewer.dev/docs/#entrydocs-annotations-methods-positionAndNormalFromPoint
+// hulp: matthew
 viewer.addEventListener('load', () => {
     viewer.addEventListener('click', (e) => {
         const hit = viewer.positionAndNormalFromPoint(e.clientX, e.clientY);

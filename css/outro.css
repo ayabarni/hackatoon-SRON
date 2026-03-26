@@ -79,6 +79,10 @@
     }
 }
 
+.outro-tekst {
+    opacity: 0;
+    transform: translateY(30px);
+}
 
 .outro-tekst.is-visible {
     opacity: 1;
