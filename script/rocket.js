@@ -49,10 +49,15 @@ volgendePaginaButton.addEventListener('click', (event) => {
     event.preventDefault();
 
     document.body.classList.add("pagina-verlaten")
-
-    setTimeout(() => {
+    
+    viewer.addEventListener("animationend", function() {
         console.log("halloooo");
 
         window.location.href = event.target.href;
-    }, 2000);
+    })
+
+
+    // setTimeout(() => {
+        
+    // }, 2000);
 })
