@@ -152,6 +152,7 @@ main {
 .tekst-container2:has(p.block) .tekst-lijn,
 .tekst-container3:has(p.block) .tekst-lijn {
     display: block;
+    width: fit-content;
 }
 
 
