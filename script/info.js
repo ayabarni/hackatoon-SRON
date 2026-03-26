@@ -1,7 +1,46 @@
+// MARK: Constanten
+// -------- ZAKLAMP --------
 const lightCursor = document.querySelector(".cursor");
 const overlayElement = document.querySelector(".overlay");
 let movingTimer;
 
+const toggleInput = document.getElementById("flashlight-toggle");
+const toggleLabel = document.querySelector(".toggle-label");
+const overlay = document.querySelector(".overlay");
+
+
+
+
+// ---------- PLANETEN ---------
+const container = document.querySelector(".container");
+const planets = document.querySelectorAll(".planet");
+const threshold = 300;
+
+let mouseX = 0;
+let mouseY = 0;
+
+
+
+
+// https://codepen.io/shooft/pen/QwEbeME
+let containerBCR = container.getBoundingClientRect();
+let containerWidth = container.clientWidth;
+let containerHeight = container.clientHeight;
+
+// --------- STARS ---------
+const starContainer = document.querySelector(".stars-container");
+
+let starContainerWidth = starContainer.clientWidth;
+let starContainerHeight = starContainer.clientHeight;
+
+let stars = [];
+let starCount = 300;
+
+
+
+
+// MARK: Functions
+// ---------- ZAKLAMP ---------
 function followCursor() {
     window.addEventListener("mousemove", followMouse);
 }
@@ -31,11 +70,6 @@ function followMouse(e) {
 
 followCursor()
 
-// MARK: zaklamp aan/uit
-const toggleInput = document.getElementById("flashlight-toggle");
-const toggleLabel = document.querySelector(".toggle-label");
-const overlay = document.querySelector(".overlay");
-
 if (toggleInput) {
     toggleInput.addEventListener("change", (e) => {
         if (e.target.checked) {
@@ -52,18 +86,7 @@ if (toggleInput) {
 
 
 
-
-
-
-
-const starContainer = document.querySelector(".stars-container");
-
-let starContainerWidth = starContainer.clientWidth;
-let starContainerHeight = starContainer.clientHeight;
-
-let stars = [];
-let starCount = 300;
-
+// --------- STARS ----------
 function Star() {
   const starDiv = document.createElement("div");
   starDiv.classList.add("star-css");
@@ -176,23 +199,7 @@ function randomNumber(min, max) {
 
 
 
-const container = document.querySelector(".container");
-const planets = document.querySelectorAll(".planet");
-
-const threshold = 200;
-
-
-let mouseX = 0;
-let mouseY = 0;
-
-
-// https://codepen.io/shooft/pen/QwEbeME
-let containerBCR = container.getBoundingClientRect();
-let containerWidth = container.clientWidth;
-let containerHeight = container.clientHeight;
-
-
-
+// ---------- PLANETS ---------
 
 // Zwevende positie (random)
 // ChatGPT: geef mij een berekening hoe ik mijn divs vrij kan laten zweven over mijn pagina
@@ -266,7 +273,7 @@ function planetsAnimation() {
     let repelY = 0;
 
     if (distance < threshold) {
-      let force = (1 - distance / threshold) * 100;
+      let force = (1 - distance / threshold) * 200;
 
       let angle = Math.atan2(deltaY, deltaX);
 
