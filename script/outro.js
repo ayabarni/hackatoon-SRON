@@ -21,5 +21,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setTimeout(() => {
         outroTekst.classList.add("is-visible");
-    }, 1200);
+    }, 2500);
 });

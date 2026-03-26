@@ -22,7 +22,7 @@
     width: 100vw;
     height: 100vh;
     object-fit: cover;
-    animation: zoomOut 1s ease-in forwards;
+    animation: zoomOut 3s ease-in forwards;
 }
 
 @keyframes zoomOut {
@@ -47,7 +47,7 @@
     max-width: 40rem;
     text-align: center;
     color: white;
-    background: rgba(10, 10, 20, 0.45);
+    background-color: rgba(255, 255, 255, 0.15);
     border: 1px solid rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
     padding: 2rem;
@@ -56,13 +56,29 @@
 
     div {
         margin-bottom: 2rem;
+        
+        a {  
+            text-decoration: none;
+            color: var(--color-orange);
+
+            &:hover {
+                color: white;
+                background: rgba(235, 93, 53, 0.2);
+                border: 2px solid var(--color-orange);
+                transform: scale(1.1) rotate(-2deg);
+
+                box-shadow:
+                0 0 15px rgba(235, 93, 53, 0.5),
+                0 0 30px rgba(235, 93, 53, 0.3),
+                inset 0 0 15px rgba(235, 93, 53, 0.2);
+
+                text-shadow: 0 0 5px white, 0 0 10px var(--color-orange);
+                animation: pulseLaunchGlow 1.5s infinite alternate;
+            }
+        }
     }
 }
 
-.outro-tekst {
-    opacity: 0;
-    transform: translateY(30px);
-}
 
 .outro-tekst.is-visible {
     opacity: 1;
