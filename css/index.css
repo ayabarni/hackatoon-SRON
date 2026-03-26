@@ -1,9 +1,9 @@
 :root {
-  --color-orange: #EB5D35;
-  --color-bg-darkblue: #292F6B;
-  --color-bg-darkerblue: #141738;
-  --color-text: #fff;
-  --color-bg-darkerblue-rgba: 20, 23, 56;
+    --color-orange: #EB5D35;
+    --color-bg-darkblue: #292F6B;
+    --color-bg-darkerblue: #141738;
+    --color-text: #fff;
+    --color-bg-darkerblue-rgba: 20, 23, 56;
 }
 
 body {
@@ -33,7 +33,6 @@ body.fade-out {
 
 /* MARK: scroll text introduction page (Jeppe) */
 @keyframes blink {
-
     0%,
     100% {
         opacity: 1;
@@ -57,7 +56,6 @@ body.fade-out {
 }
 
 @keyframes fadeInCenter {
-
     0%,
     40% {
         opacity: 0;
@@ -117,12 +115,12 @@ body.fade-out {
         & img {
             width: 50vw;
         }
-    } 
+    }
 
     .snap-section {
-        height:200dvh;
+        height: 200dvh;
 
-        display:grid;
+        display: grid;
 
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
@@ -133,10 +131,10 @@ body.fade-out {
             font-size: 4rem;
             text-transform: uppercase;
             position: sticky;
-            top:0;
+            top: 0;
 
-            display:grid;
-            place-items:center;
+            display: grid;
+            place-items: center;
         }
     }
 
@@ -151,20 +149,15 @@ body.fade-out {
 
     .text-container {
         border-radius: 25px;
-
         backdrop-filter: blur(5px);
-
         transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        /* padding: 1em; */
         animation: fadeInCenter linear;
         animation-timeline: view();
-
         grid-column-start: 2;
-
         scroll-snap-align: center;
-
-        display:grid;
-        place-items:center;
+        display: grid;
+        place-items: center;
+        align-self: center;
     }
 
     .typewriter {
@@ -181,7 +174,6 @@ body.fade-out {
         background-color: #ffffff;
         vertical-align: middle;
         margin-left: 5px;
-        /* animation: blink 1s step-end infinite; */
     }
 
     @media (min-width: 768px) {
@@ -196,13 +188,23 @@ body.fade-out {
         }
 
         .text-container {
-            padding: 2.5rem;
+            padding: 2rem;
             min-height: 220px;
         }
 
         .typewriter {
             font-size: 1.1rem;
             line-height: 1.7;
+        }
+
+        & h2 {
+            left: 0.7em;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        & h2 {
+            left: 0;
         }
     }
 }
@@ -222,20 +224,20 @@ body.fade-out {
 /* MARK: skip button */
 .skip-button {
     position: fixed;
-    bottom: 40px; 
+    bottom: 40px;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 100; 
+    z-index: 100;
     background: rgba(255, 255, 255, 0.1);
     color: var(--color-text);
     border: 1px solid rgba(255, 255, 255, 0.3);
     padding: 12px 24px;
     border-radius: 30px;
-    
+
     font-size: 1rem;
     cursor: pointer;
-    backdrop-filter: blur(5px); 
-    
+    backdrop-filter: blur(5px);
+
     transition: all 0.3s ease;
 }
 
@@ -252,19 +254,19 @@ body.fade-out {
 }
 
 @media (max-width: 768px) {
-   
     .jeppe-scroll {
         & .snap-section {
             grid-template-columns: 1fr;
-            grid-template-rows: auto; 
+            grid-template-rows: auto;
             height: auto;
-            min-height: 100dvh;
             display: flex;
             flex-direction: column;
+            gap: 25vh;
+            padding-bottom: 20vh;
 
             & h2 {
                 position: sticky;
-                top: 20dvh;
+                top: 25dvh;
                 z-index: 10;
                 padding: 1rem 0;
                 font-size: 2.5rem;
@@ -276,13 +278,21 @@ body.fade-out {
         & .text-container {
             grid-column-start: 1;
             width: 90%;
+            margin: 0 auto;
             padding: 1.5rem;
-            min-height: 300px; 
+            height: 330px;
             display: flex;
             align-items: center;
             justify-content: center;
+            scroll-snap-align: center;
         }
-
     }
- 
+}
+
+@media (max-width: 1023px) {
+    .jeppe-scroll .snap-section h2 {
+        width: min-content;
+        margin: 0 auto;
+        line-height: 1.1;
+    }
 }
