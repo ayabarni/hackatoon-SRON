@@ -382,6 +382,12 @@ model-viewer {
     }
 }
 
+@media (min-width: 100rem) {
+    .scene {
+        height: 120vh;
+    }
+}
+
 @media (min-width: 64rem) {
     .info {
         top: 15%;
@@ -409,4 +415,3 @@ model-viewer {
     animation-duration: .3s;
 }
  
-
