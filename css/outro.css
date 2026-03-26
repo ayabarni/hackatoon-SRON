@@ -22,7 +22,7 @@
     width: 100vw;
     height: 100vh;
     object-fit: cover;
-    animation: zoomOut 3s ease-in forwards;
+    animation: zoomOut 1s ease-in forwards;
 }
 
 @keyframes zoomOut {
