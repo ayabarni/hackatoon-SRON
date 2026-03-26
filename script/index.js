@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     video.playbackRate = 0.5;
 
     // Typewriter
+    // Bronnen: https://dev.to/hassantayyab/understanding-observers-in-javascript-a-comprehensive-guide-5hkm & https://css-tricks.com/snippets/css/typewriter-effect/
     // Maak observer
     const observer = new IntersectionObserver((entries) => {
 
@@ -53,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
         // 50% van het blok moet in beeld zijn om de typewriter te starten
-    }, { threshold: 0.5 });
+    }, { threshold: 0.8 });
 
     // Ga de hele lijst af
     textElements.forEach(el => observer.observe(el));
